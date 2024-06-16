@@ -1,0 +1,86 @@
+Let's just get the structure of the overall html file here from our other view. And let's 
+also, of course, define the mapping 
+[00:01:00]
+ for this in our project controller. This is 
+going to return the view name, which is of course the name of the file that we just 
+created. That was new project. All right, so we are still in the preparation phase. We 
+haven't actually started implementing 
+[00:01:30]
+ our write operation, because we first, 
+of course, need to set things up. So, for example, one open question is how does a user 
+get to this page? Let's add a link to it in our project homepage.
+We're going to use the link support in Thymeleaf, of course. 
+[00:02:00]
+ All right, and we 
+are done with the infrastructure. It's time to actually write our form and do our create 
+operation. At this point, of course, our domain is very simple. All we're going to actually 
+require is the name of the project.
+[00:02:30]
+ Of course, this basic form isn't really enough. We do need to set up a few 
+other aspects here. So, for example, was the URL where this post operation should be 
+sent? 
+[00:03:00]
+ Also, when the form data will be submitted, what's the object name to 
+which the data will be bound? And finally, we also need to map the individual fields.
+Now, luckily, we only have one field to map here, the name, so that's going to be simple. 
+[00:03:30]
+ And we should be ready to go. This is a very simple post, but it should be fully 
+functional. All right, let's get the application started here. Let's open up the browser and 
+let's have a look. All right, so first of all, we see the way we can access the new
+operation. Remember we added a link so that we can do that.
+All right, so we are getting this error here. 
+[00:04:00]
+ But this isn't enough to understand 
+why is this not working, so what is our next step here? The next step is very simple. 
+We're going to go back to Eclipse and we're going to look at the console to number one, 
+understand exactly what's going on, but number two, get accustomed to this process of 
+seeing an error, understanding where to look to figure out what's going on, and then 
+fixing that error. All right, so this is 
+[00:04:30]
+ the data in the console. Let's see how 
+informative this is and if we have enough to immediately understand what the problem
+is.
+All right, so the error is caused by this illegal state exception, which we need to read 
+very carefully. So, this is saying that neither a binding result nor a plain object are 
+available as a request attribute. So, what does that mean? Well, let's have another look 
+at the new project view.
+[00:05:00]
+  Notice  that  we  do  have  this  object  called  project  map  here.  We  are  expect
+ing this project. However, when we display this view right here, we're not actually map
+ping
+Eugen
+: 
+Welcome to this lesson out of Learn Spring, where we're going to continue expanding 
+our application functionality with the full create operation, using, of course, Spring MVC
+and using Thymeleaf. All right, let's jump right in. We have seen up until this point how 
+to display a list of projects. So now, we're going to build that functionality that create a 
+new  project.  We're  going  to  do  a  write  operation.  So, 
+[00:00:30]
+  let's  start  with  the 
+front end and let's create a new view here.
+Page 2 of 2
+and returning any project object. So, that is what's missing here. We can easily, of 
+course, add in the attribute. There 
+[00:05:30]
+ we have it. We'll just add in an empty 
+project, mapping that to the project attribute. So, the view, which, of course, requires 
+that will render.
+All right, let's restart the application and let's go back to the browser. There we have it. 
+Now, the view renders correctly. All right, so now that we're able to see the view with 
+our form, 
+[00:06:00]
+ what about hitting the button here and submitting the form? Well, 
+that's a different story. Naturally, that's a different operation with a different http verb, 
+which, remember the form, we had that defined as a post. All right, so let me find a 
+method in the controller that's going to handle 
+[00:06:30]
+ that.
+At  this  point,  we're  just  going  to  save  the  project,  and  we're  going  to  redirect  back  to 
+the  project's  view,  back  to  the  list.  All  right,  so  let's  run  again  and  let's  make  sure  that 
+now  the  full  operation  is  actually  working. 
+[00:07:00]
+  We're  going  to  create  a  project 
+called  Test  123.  And  there  we  have  it.  We  now  finally  have  a  simple  but  fully  working 
+create operation that actually processed our data. All right, hope you're excited. See you
+in the next lesson.
+
